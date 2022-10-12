@@ -37,12 +37,18 @@ const addTodo = (event) => {
   todoInput.value = " ";
 };
 
+//Delete from ToDo List
 const deleteCheck = (e) => {
   const item = e.target;
   //Delete toDo
   if (item.classList[0] === "trash-btn") {
     const todo = item.parentElement;
     todo.remove();
+  }
+  //Add to ToDo List
+  if (item.classList[0] === "complete-btn") {
+    const todo = item.parentElement;
+    todo.classList.toggle("completed");
   }
 };
 
